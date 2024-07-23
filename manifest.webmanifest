@@ -6,9 +6,9 @@
       "sizes": "192x192"
     },
     {
-      "src": "favicons/favicon-310.png",
+      "src": "favicons/favicon-512.png",
       "type": "image/png",
-      "sizes": "310x310"
+      "sizes": "512x512"
     }
   ]
 }
