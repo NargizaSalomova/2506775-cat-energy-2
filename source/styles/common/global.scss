@@ -1,14 +1,17 @@
 /* здесь используйте глобальные селекторы img, body, html и так далее */
+
 .page {
   height: 100%;
 }
 
 .page__body {
   min-height: 100%;
+
   font-family: "Lato", "Arial", sans-serif;
   color: $primary-text;
   font-weight: 400;
   font-style: normal;
+
   margin: 0;
 }
 

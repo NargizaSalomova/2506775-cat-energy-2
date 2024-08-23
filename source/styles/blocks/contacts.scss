@@ -1,9 +1,11 @@
+
 .contacts__list {
   @media (min-width: $desktop-width) {
     display: flex;
     flex-wrap: wrap;
   }
 }
+
 
 .contacts__input--email {
   background-image: url("../../icons/stack.svg#icon-email");

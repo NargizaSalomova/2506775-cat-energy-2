@@ -16,10 +16,12 @@
   background-color: $bg-basic-gray;
 
 
+
   @media (min-width: $tablet-width) {
     display: flex;
     justify-content: space-between;
   }
+
 }
 
 .footer__logo-link {
@@ -40,6 +42,8 @@
 }
 
 
+
+
 .footer__developer-link {
   @include font(16px, 20px, 400);
   color: $primary-text;
@@ -49,11 +53,13 @@
   height: 34px;
 }
 
+
 .footer__social {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
+
 
 .footer__developer-logo {
   display: inline-block;

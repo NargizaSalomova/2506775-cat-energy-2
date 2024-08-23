@@ -1,9 +1,11 @@
+
 .diet__container {
   @media (min-width: $desktop-width) {
     display: flex;
     flex-wrap: wrap;
   }
 }
+
 
 .diet__block {
   background-color: $bg-basic-gray;
@@ -14,6 +16,7 @@
   font-family: "Oswald", "Arial", sans-serif;
   color: $basic-dark-text;
   text-transform: uppercase;
+
 }
 
 .diet__description {

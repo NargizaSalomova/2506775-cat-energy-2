@@ -1,3 +1,4 @@
+
 .description__list {
   margin: 0;
   padding: 0;
@@ -12,6 +13,7 @@
     grid-template-columns: repeat(4, 250px);
   }
 }
+
 
 .description__subtitle {
   @include font(14px, 18px, 400);
