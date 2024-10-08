@@ -1,4 +1,10 @@
 /* здесь используйте глобальные селекторы img, body, html и так далее */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 .page {
   height: 100%;
 }
@@ -13,13 +19,28 @@
 }
 
 .container {
+  width: 87%;
+  max-width: 767px;
   margin: 0 auto;
 
   @media (min-width: $tablet-width) {
-    width: 708px;
+    width: 92%;
+    max-width: 1220px;
+  }
+}
+
+img {
+  display: inline-block;
+}
+
+picture {
+  display: contents;
+
+  @media (min-width: $tablet-width) {
+    display: contents;
   }
 
   @media (min-width: $desktop-width) {
-    width: 1220px;
+    display: contents;
   }
 }

@@ -1,15 +1,35 @@
+.main-nav {
+  position: absolute;
+  top: 66px;
+  left: 0;
+  right: 0;
+  z-index: 15;
+  background-color: $basic-light-text;
+
+  @media (min-width: $tablet-width) {
+    position: static;
+    margin-top: auto;
+  }
+
+  @media (min-width: $desktop-width) {
+    background-color: transparent;
+  }
+}
+
+.main-nav--closed {
+  display: none;
+
+  @media (min-width: $tablet-width) {
+    display: block;
+  }
+}
+
 .main-nav__list {
   margin: 0;
   padding: 0;
   list-style-type: none;
 
   @media (min-width: $tablet-width) {
-    width: 436px;
-  }
-}
-
-.main-nav__toggle {
-  @media (min-width: $tablet-width) {
-    display: none;
+    min-width: 440px;
   }
 }

@@ -1,3 +1,12 @@
 .description-product {
   @include font(12px, 16px, 400);
 }
+
+.description-product__wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.description-product__value {
+  margin: 0;
+}

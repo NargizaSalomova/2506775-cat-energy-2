@@ -4,31 +4,168 @@
     image-set(url("../../images/phone-images/index/mobile-hero-background@1x.jpg") 1x,
     url("../../images/phone-images/index/mobile-hero-background@2x.jpg") 2x);
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 100% 302px;
+  background-position: center top;
+  margin-bottom: 20px;
   position: relative;
-  background-color: #ff6347;
+  overflow: hidden;
 
-  @media (min-width: $tablet-width) and (max-width: $desktop-width) {
+  @media (min-width: $tablet-width) {
     background-image: none;
+    padding-top: 53px;
+    height: 810px;
+    margin-bottom: 60px;
   }
 
   @media (min-width: $desktop-width) {
-    background-image:
-      linear-gradient(45deg, rgba(104, 183, 56, 0.85), rgba(104, 183, 56, 0.85)),
-      image-set(url("../../images/desktop-images/index/hero-background-desktop@1x.png") 1x,
-      url("../../images/desktop-images/index/hero-background-desktop@2x.png") 2x);
-    background-size: 50%;
-    background-position: right;
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(104, 183, 56, 0.85) 50%, rgba(104, 183, 56, 0.85) 100%);
+    background-size: 100%, contain;
+    background-position: right top;
+    margin-bottom: 82px;
+    padding-top: 143px;
+    height: 694px;
+
+    &::after {
+      content: "";
+      background-image:
+        image-set(url("../../images/desktop-images/index/desktop-hero-cat@1x.jpeg") 1x,
+        url("../../images/desktop-images/index/desktop-hero-cat@2x.jpeg") 2x);
+      background-size: contain;
+      background-repeat: no-repeat;
+      min-width: 720px;
+      width: 100%;
+      height: 694px;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      z-index: -1;
+    }
+  }
+}
+
+.hero__container {
+  display: grid;
+  grid-template-rows: 100px 68px 270px 40px;
+  grid-template-columns: 1fr;
+  justify-content: center;
+
+  @media (min-width: $tablet-width) {
+    grid-template-rows: 120px 110px 54px 526px;
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-template-rows: 201px 110px 54px auto;
+    grid-template-columns: auto 552px;
+    justify-content: start;
   }
 }
 
 .hero__title {
   color: $basic-light-text;
+  line-height: 36px;
+  width: 250px;
+  text-align: center;
+  margin: 0;
+  place-self: self-end center;
+
+  @media (min-width: $tablet-width) {
+    color: $basic-dark-text;
+    width: 416px;
+    font-size: 60px;
+    line-height: 60px;
+    margin: 0;
+    text-align: left;
+    justify-self: flex-start;
+    margin-left: 90px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: calc(55px + (60 - 55) * ( (100vw - 1024px) / ( 1439 - 1024) ));
+    margin: 0;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+
+  @media (min-width: $desktop-max-width) {
+    padding-top: 224px;
+    margin-left: 80px;
+    font-size: 60px;
+  }
 }
 
 .hero__description {
   @include font(14px, 14px, 400);
   font-family: "Oswald", "Arial", sans-serif;
+  margin: 0;
   text-transform: uppercase;
   color: $basic-light-text;
+  place-self: center center;
+
+  @media (min-width: $tablet-width) {
+    color: $basic-dark-text;
+    font-size: 20px;
+    line-height: 20px;
+    width: 285px;
+    justify-self: flex-start;
+    margin-left: 90px;
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    padding-bottom: 3px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin: 0;
+  }
+
+  @media (min-width: $desktop-max-width) {
+    margin-left: 80px;
+  }
+}
+
+.hero__product {
+  grid-row: 3/4;
+  justify-self: center;
+
+  @media (min-width: $tablet-width) {
+    grid-row: 2 / 5;
+    grid-column: 1 / 2;
+    z-index: -1;
+    margin-top: 80px;
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-row: 1 / -1;
+    grid-column: 1 / 3;
+    z-index: 10;
+    justify-self: right;
+    margin: 0;
+    margin-right: 115px;
+  }
+
+  @media (min-width: $desktop-max-width) {
+    margin-right: 49px;
+  }
+}
+
+.hero__button {
+  width: 100%;
+  grid-row: 4/5;
+
+  @media (min-width: $tablet-width) {
+    grid-row: 3/4;
+    padding: 14px 26px;
+    font-size: 20px;
+    line-height: 26px;
+    max-width: 244px;
+    margin-left: 90px;
+    grid-column: 1 / 2;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin: 0;
+  }
+
+  @media (min-width: $desktop-max-width) {
+    margin-left: 80px;
+  }
 }

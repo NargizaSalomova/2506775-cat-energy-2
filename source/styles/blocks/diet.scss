@@ -2,11 +2,79 @@
   @media (min-width: $desktop-width) {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 80px;
+  }
+}
+
+.diet {
+  margin-bottom: 20px;
+
+  @media (min-width: $tablet-width) {
+    min-width: 45px;
+    margin-bottom: 45px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 71px;
   }
 }
 
 .diet__block {
   background-color: $bg-basic-gray;
+  position: relative;
+  padding: 30px 10px 20px 20px;
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  @media (min-width: $tablet-width) {
+    padding: 77px 63px 53px 52px;
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    flex: 43% 1 0;
+    padding: 30px 10px 20px 20px;
+
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+  }
+
+  @media (min-width: $desktop-max-width) {
+    flex: 46% 1 0;
+    padding: 77px 61px 55px 51px;
+  }
+}
+
+.diet__block::after {
+  content: "";
+  width: 50px;
+  height: 50px;
+  background-color: $bg-basic-green;
+  border-radius: 50%;
+  position: absolute;
+  top: 24px;
+  left: 20px;
+
+  @media (min-width: $tablet-width) {
+    width: 200px;
+    height: 200px;
+    top: 92px;
+    left: 63%;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 100px;
+    height: 100px;
+    top: 41px;
+    left: 52px;
+  }
 }
 
 .diet__title {
@@ -14,32 +82,141 @@
   font-family: "Oswald", "Arial", sans-serif;
   color: $basic-dark-text;
   text-transform: uppercase;
+  margin: 0;
+  margin-bottom: 29px;
+  margin-left: 69px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 36px;
+    line-height: 36px;
+    margin-left: 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-left: 162px;
+    margin-bottom: 73px;
+    padding-top: 50px;
+  }
+
+  @media (min-width: $desktop-max-width) {
+    padding-top: 0;
+  }
 }
 
 .diet__description {
   @include font(14px, 18px, 400);
+  margin: 0;
+  min-width: 240px;
+  border-bottom: 1px solid $border-gray;
+  padding-bottom: 23px;
+  margin-bottom: 16px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 16px;
+    line-height: 24px;
+    color: $basic-dark-text;
+    width: 57%;
+    border: none;
+  }
+
+  @media (min-width: $desktop-width) {
+    max-width: 457px;
+    width: 100%;
+    margin-bottom: 17px;
+  }
 }
 
 .diet__link {
+  display: inline-block;
+  position: relative;
+
   @include font(16px, 16px, 400);
   font-family: "Oswald", "Arial", sans-serif;
   text-transform: uppercase;
   color: $basic-dark-text;
   text-decoration: none;
+  padding-right: 60px;
   background-image: url("../../icons/stack.svg#arrow");
-  transition: opacity 0.3s ease;
+  background-size: 24px 12px;
+  background-position: center right 8px;
+  background-repeat: no-repeat;
+  transition: opacity 0.3s ease, background-position 0.3s ease;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 7px;
+    right: 24px;
+    width: 8px;
+    height: 2px;
+    background-color: $basic-dark-text;
+  }
+
+  @media (min-width: $tablet-width) {
+    font-size: 20px;
+    line-height: 30px;
+
+    &::after {
+      top: 14px;
+    }
+  }
+
+  &:hover {
+    background-position: right center;
+  }
 }
 
 .diet__link:active {
   opacity: 0.3;
 }
 
-.diet__block--slim {
+.diet__block--slim::before {
+  content: "";
+  position: absolute;
+  top: 21px;
+  left: 27px;
+  z-index: 10;
   background-image: url("../../icons/stack.svg#cat-slim");
-  background-position: center;
+  width: 36px;
+  height: 50px;
   background-repeat: no-repeat;
+
+  @media (min-width: $tablet-width) {
+    width: 140px;
+    height: 194px;
+    top: 81px;
+    left: 67%;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 70px;
+    height: 97px;
+    top: 41px;
+    left: 67px;
+  }
 }
 
-.diet__block--pro {
+.diet__block--pro::before {
+  content: "";
+  position: absolute;
+  top: 35px;
+  left: 11px;
+  z-index: 10;
   background-image: url("../../icons/stack.svg#cat-pro");
+  width: 67px;
+  height: 28px;
+
+  @media (min-width: $tablet-width) {
+    width: 268px;
+    height: 112px;
+    top: 135px;
+    left: 58%;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 134px;
+    height: 56px;
+    top: 67px;
+    left: 33px;
+  }
 }

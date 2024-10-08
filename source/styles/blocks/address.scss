@@ -1,0 +1,143 @@
+.address {
+  height: 474px;
+  background-image:
+    image-set(url("../../images/phone-images/index/mobile-map@1x.jpg") 1x,
+    url("../../images/phone-images/index/mobile-map@2x.jpg") 2x);
+  background-repeat: no-repeat;
+  background-size: 100% 76%;
+  background-position: center top 251px, bottom;
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 56px;
+    height: 53px;
+    background-image:
+      image-set(url("../../images/phone-images/index/mobile-map-pin@1x.png") 1x,
+      url("../../images/phone-images/index/mobile-map-pin@2x.png") 2x);
+    background-repeat: no-repeat;
+    background-size: 56px 53px;
+    position: absolute;
+    top: 251px;
+    left: 50%;
+    z-index: 10;
+  }
+
+  @media (min-width: $tablet-width) {
+    background-image:
+      image-set(url("../../images/tablet-images/index/tablet-map@1x.jpg") 1x,
+      url("../../images/tablet-images/index/tablet-map@2x.jpg") 2x);
+    background-size: 100% 65%;
+    background-position: bottom;
+    height: 608px;
+
+    &::before {
+      width: 113px;
+      height: 106px;
+      background-size: 113px 106px;
+      left: 50%;
+      top: 405px;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    background-image:
+      image-set(url("../../images/desktop-images/index/map-desktop@1x.jpg") 1x,
+      url("../../images/desktop-images/index/map-desktop@2x.jpg") 2x);
+    background-position: 100%;
+    background-size: 100%;
+    height: 400px;
+
+    &::before {
+      left: 63%;
+      top: 131px;
+    }
+  }
+}
+
+.address--background {
+  background-color: $bg-basic-gray;
+}
+
+.address iframe {
+  border: none;
+  display: block;
+  width: 100%;
+  height: 362px;
+
+  @media (min-width: $tablet-width) {
+    height: 400px;
+  }
+}
+
+.address__container {
+  padding: 26px 0;
+
+  @media (min-width: $tablet-width) {
+    padding: 60px 70px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 0;
+    position: relative;
+  }
+}
+
+.address__block {
+  display: flex;
+  justify-content: space-between;
+
+  @media (min-width: $desktop-width) {
+    width: 46%;
+    padding: 60px 25px;
+    background-color: $basic-light-text;
+    position: absolute;
+    top: 95px;
+    left: 0;
+  }
+
+  @media (min-width: $desktop-max-width) {
+    padding: 60px 78px 60px 80px;
+  }
+}
+
+.address__offer {
+  @include font(16px, 20px, 400);
+  font-family: "Oswald", "Arial", sans-serif;
+  text-transform: uppercase;
+  color: $special-light-gray;
+  margin: 0;
+
+  @media (min-width: $tablet-width) {
+    font-size: 20px;
+    line-height: 26px;
+    max-width: 163px;
+  }
+}
+
+.address__location {
+  @include font(14px, 20px, 400);
+  font-style: normal;
+  font-size: 14px;
+  line-height: 20px;
+  max-width: 140px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 16px;
+    max-width: 157px;
+    text-align: right;
+  }
+
+  @media (min-width: $desktop-width) {
+    text-align: left;
+  }
+}
+
+.address__location > span {
+  display: block;
+
+  @media (min-width: $tablet-width) {
+    display: inline-block;
+    margin-bottom: 28px;
+  }
+}

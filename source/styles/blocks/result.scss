@@ -1,5 +1,23 @@
 .result {
   background-color: $bg-accent-gray;
+  padding-top: 25px;
+  padding-bottom: 40px;
+
+  @media (min-width: $tablet-width) {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 56%, rgba(234, 234, 234, 1) 56%, rgba(234, 234, 234, 1) 100%);
+    padding-bottom: 101px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-top: 0;
+    padding-bottom: 68px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 20%, rgba(242, 242, 242, 1) 20%, rgba(242, 242, 242, 1) 100%);
+  }
+
+  @media (min-width: $desktop-max-width) {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 23%, rgba(242, 242, 242, 1) 23%, rgba(242, 242, 242, 1) 100%);
+    padding-bottom: 70px;
+  }
 }
 
 .result__block {
@@ -8,20 +26,131 @@
 
   @media (min-width: $desktop-width) {
     flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.result__example {
+  display: grid;
+  grid-template-columns: 124px 124px;
+  grid-template-rows: auto 70px auto;
+  gap: 20px 32px;
+  justify-content: center;
+  margin-bottom: 20px;
+
+  @media (min-width: $tablet-width) {
+    grid-template-rows: 72px 77px;
+    grid-template-columns: 162px 162px 1fr;
+    gap: 55px 43px;
+    margin-bottom: 102px;
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-template-columns: 173px 165px;
+    grid-template-rows: auto 77px auto;
+    align-content: start;
+    column-gap: 31px;
+    margin-bottom: 0;
+  }
+
+  @media (min-width: $desktop-max-width) {
+    grid-template-columns: 173px 255px;
+  }
+}
+
+
+.result__title {
+  margin-bottom: 40px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 60px;
+    line-height: 60px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 75px;
+  }
+
+  @media (min-width: $desktop-max-width) {
+    margin-bottom: 146px;
   }
 }
 
 .result__subtitle {
   @include font(14px, 18px, 400);
+  margin: 0;
+  grid-column: 1 / -1;
+
+  @media (min-width: $tablet-width) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.result__description {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.result__days {
+  justify-self: right;
+
+  @media (min-width: $desktop-width) {
+    justify-self: left;
+  }
 }
 
 .result__number {
   @include font(24px, 24px, 400);
   font-family: "Oswald", "Arial", sans-serif;
+  display: inline-block;
+  width: 124px;
+  min-height: 56px;
+  border: 1px solid $special-gray;
+  border-radius: 3px;
+  text-align: center;
+  padding-top: 15px;
+
+  @media (min-width: $tablet-width) {
+    width: 162px;
+    min-height: 72px;
+    font-size: 30px;
+    line-height: 37px;
+  }
 }
 
 .result__text {
   @include font(12px, 12px, 400);
+  width: 87px;
+  min-height: 24px;
+  text-align: center;
+  padding: 0 5px;
+  position: absolute;
+  top: 47px;
+  left: 18px;
+  background-color: $bg-accent-gray;
+
+  @media (min-width: $tablet-width) {
+    width: 114px;
+    padding: 0;
+    top: 63px;
+    left: 24px;
+    font-size: 14px;
+    line-height: 14px;
+    background-color: $basic-light-text;
+  }
+
+  @media (min-width: $desktop-width) {
+    background-color: $bg-basic-gray;
+  }
+}
+
+.result__days .result__text {
+  @media (min-width: $tablet-width) {
+    width: 142px;
+    left: 10px;
+  }
 }
 
 .result__expenses {
@@ -29,4 +158,42 @@
   font-family: "Oswald", "Arial", sans-serif;
   text-transform: uppercase;
   color: $basic-dark-text;
+  margin: 0;
+  grid-column: 1 / -1;
+  justify-self: center;
+
+  @media (min-width: $tablet-width) {
+    grid-column: 3 / 4;
+    place-self: center right;
+    max-width: 180px;
+    text-align: right;
+    font-size: 20px;
+    line-height: 20px;
+    align-self: start;
+    margin-top: 11px;
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-column: 1 / -1;
+    max-width: none;
+    justify-self: start;
+  }
+}
+
+.result__expenses span {
+  @media (min-width: $desktop-width) {
+    margin-left: 64px;
+  }
+}
+
+
+.result__images-cat {
+  @media (min-width: $desktop-width) {
+    margin: 0;
+    margin-top: -131px;
+  }
+
+  @media (min-width: $desktop-max-width) {
+    margin-top: -205px;
+  }
 }

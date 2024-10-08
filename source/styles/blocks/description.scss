@@ -1,38 +1,140 @@
+.description {
+  margin-bottom: 49px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 47px;
+  }
+}
+
 .description__list {
   margin: 0;
   padding: 0;
   list-style-type: none;
+  counter-reset: chapter;
 
   @media (min-width: $tablet-width) {
     display: grid;
-    grid-template-columns: 250px 250px;
+    grid-template-columns: 247px 249px;
+    grid-template-rows: repeat(2, 280px);
+    column-gap: 137px;
   }
 
   @media (min-width: $desktop-width) {
-    grid-template-columns: repeat(4, 250px);
+    grid-template-columns: repeat(4, 24%);
+    grid-template-rows: 280px;
+    gap: 15px;
+    margin-bottom: 69px;
   }
+
+  @media (min-width: $desktop-max-width) {
+    grid-template-columns: repeat(4, 250px);
+    column-gap: 77px;
+  }
+}
+
+.description__title {
+  margin-bottom: 40px;
 }
 
 .description__subtitle {
   @include font(14px, 18px, 400);
+  margin: 0;
+
+  @media (min-width: $tablet-width) {
+    font-size: 16px;
+    line-height: 24px;
+  }
 }
 
 .description__item {
-  background-color: $bg-basic-green;
+  min-height: 60px;
+  background-repeat: no-repeat;
+  padding-left: 79px;
+  position: relative;
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  &::before {
+    content: "";
+    width: 60px;
+    height: 60px;
+    background-color: $bg-basic-green;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  @media (min-width: $tablet-width) {
+    padding-left: 0;
+    padding-top: 151px;
+
+    &::before {
+      width: 80px;
+      height: 80px;
+      top: 40px;
+    }
+
+    &::after {
+      @include font(280px, 280px, 400);
+      font-family: "Oswald", "Arial", sans-serif;
+      counter-increment: chapter;
+      content: counter(chapter);
+      color: $bg-basic-gray;
+      position: absolute;
+      top: 0;
+      right: 6px;
+      z-index: -1;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .description__item--leaf {
   background-image: url("../../icons/stack.svg#leaf");
+  background-size: 30px 32px;
+  background-position: top 14px left 14px;
+
+  @media (min-width: $tablet-width) {
+    background-position: top 65px left 24px;
+    max-width: 230px;
+  }
 }
 
 .description__item--water {
   background-image: url("../../icons/stack.svg#water");
+  background-size: 26px 29px;
+  background-position: top 14px left 16px;
+
+  @media (min-width: $tablet-width) {
+    background-position: top 66px left 27px;
+    max-width: 246px;
+  }
 }
 
 .description__item--fork {
   background-image: url("../../icons/stack.svg#fork");
+  background-size: 25px 30px;
+  background-position: top 14px left 17px;
+
+  @media (min-width: $tablet-width) {
+    background-position: top 65px left 28px;
+    max-width: 247px;
+  }
 }
 
 .description__item--scale {
   background-image: url("../../icons/stack.svg#scale");
+  background-size: 26px 31px;
+  background-position: top 14px left 17px;
+
+  @media (min-width: $tablet-width) {
+    background-position: top 64px left 27px;
+    max-width: 249px;
+  }
 }

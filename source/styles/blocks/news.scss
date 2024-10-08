@@ -1,7 +1,24 @@
+.news {
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+.news__title {
+  margin-left: 20px;
+  margin-bottom: 32px;
+
+  &::after {
+    left: 212px;
+  }
+}
+
 .news__subscription {
   @include font(16px, 24px, 400);
   font-family: "Oswald", sans-serif;
   color: $basic-dark-text;
+  margin: 0;
+  text-align: center;
+  margin-bottom: 24px;
 }
 
 .news__field {
@@ -10,4 +27,17 @@
   font-size: 20px;
   line-height: 30px;
   text-transform: uppercase;
+  border: 1px solid #cdcdcd;
+  width: 100%;
+  padding: 13px;
+  color: $primary-text;
+  margin-bottom: 16px;
+}
+
+.news__button {
+  border: none;
+  width: 100%;
+  padding: 15px 82px;
+  font-size: 20px;
+  line-height: 26px;
 }
