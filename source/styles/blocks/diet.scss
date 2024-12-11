@@ -38,8 +38,8 @@
   }
 
   @media (min-width: $desktop-width) {
-    flex-basis: 570px;
-    padding: 30px 10px 20px 20px;
+    flex-basis: 45%;
+    padding: 31px 10px 20px 20px;
 
     &:not(:last-child) {
       margin-bottom: 0;
@@ -47,6 +47,7 @@
   }
 
   @media (min-width: $desktop-max-width) {
+    flex-basis: 570px;
     padding: 77px 61px 60px 55px;
   }
 }
@@ -125,7 +126,7 @@
   max-width: 227px;
   border-bottom: 1px solid $border-gray;
   padding-bottom: 22px;
-  margin-bottom: 18px;
+  margin-bottom: 19px;
 
   @media (min-width: $tablet-width) {
     font-size: 16px;
@@ -134,19 +135,13 @@
     width: 57%;
     border: none;
     max-width: 340px;
-    margin-bottom: 29px;
+    margin-bottom: 28px;
   }
 
   @media (min-width: $desktop-width) {
     max-width: 457px;
     width: 100%;
-    margin-bottom: 3px;
-  }
-}
-
-.diet__description--slim {
-  @media (min-width: $desktop-max-width) {
-    margin-bottom: 4px;
+    margin-bottom: 1px;
   }
 }
 
@@ -160,39 +155,50 @@
   color: $basic-dark-text;
   text-decoration: none;
   padding-right: 60px;
-  background-image: url("../../icons/stack.svg#arrow");
+  background-image: url("../../icons/stack.svg#diet-arrow");
   background-size: 24px 14px;
-  background-position: right 20px top;
+  background-position: right 20px top 2px;
   background-repeat: no-repeat;
   transition: opacity 0.3s ease, background-position 0.3s ease;
 
   &::after {
     content: "";
     position: absolute;
-    top: 6px;
-    right: 36px;
-    width: 8px;
+    top: 52%;
+    right: 25px;
+    transform: translateX(-52%);
+    width: 18px;
     height: 2px;
     background-color: $basic-dark-text;
+    transition: all 0.3s;
   }
 
   &:hover {
-    background-position: right 12px top -1px;
+    background-position: right 12px top 2px;
+
+    &::after {
+      width: 28px;
+      right: 7px;
+    }
   }
 
   @media (min-width: $tablet-width) {
     font-size: 20px;
     line-height: 30px;
-    background-position: right 11px top 10px;
+    background-position: right 11px top 9px;
 
     &::after {
       height: 2px;
       top: 16px;
-      right: 27px;
+      right: 17px;
     }
 
     &:hover {
-      background-position: right 3px top 10px;
+      background-position: right 6px top 9px;
+
+      &::after {
+        right: 7px;
+      }
     }
   }
 
@@ -203,11 +209,11 @@
     &::after {
       height: 2px;
       top: 15px;
-      right: 28px;
+      right: 18px;
     }
 
     &:hover {
-      background-position: right 4px top 7px;
+      background-position: right 6px top 7px;
     }
   }
 }
